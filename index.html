@@ -46,7 +46,7 @@ body{
     radial-gradient(1200px 600px at 50% -10%, rgba(85,102,184,.18), transparent 60%);
   background-attachment:fixed;
 }
-.wrap{max-width:760px;margin:0 auto;padding:26px 18px 80px}
+.wrap{max-width:760px;margin:0 auto;padding:26px 18px calc(96px + env(safe-area-inset-bottom))}
 a{color:var(--brass2)}
 
 /* header */
@@ -255,17 +255,17 @@ details.settings label{font-size:13px;color:var(--stard);display:block;margin-bo
 .reveal-progress{font-family:var(--disp);font-weight:600;letter-spacing:.1em;color:var(--brass2);font-size:15px;margin:0}
 
 /* ---- ambiance sonore 852 Hz (bouton flottant, hors flux principal) ---- */
-.ambient-btn{position:fixed;top:14px;right:14px;z-index:50;display:flex;align-items:center;gap:7px;
+.ambient-btn{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));right:calc(14px + env(safe-area-inset-right));z-index:50;display:flex;align-items:center;gap:7px;
   font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--stard);
-  background:rgba(10,13,28,.82);border:1px solid var(--line2);border-radius:999px;
-  padding:8px 13px;cursor:pointer;backdrop-filter:blur(3px);transition:border-color .2s,color .2s}
+  background:rgba(10,13,28,.92);border:1px solid var(--line2);border-radius:999px;
+  padding:10px 15px;cursor:pointer;backdrop-filter:blur(4px);transition:border-color .2s,color .2s;
+  box-shadow:0 6px 20px -8px rgba(0,0,0,.8)}
 .ambient-btn svg{width:15px;height:15px;flex:0 0 auto}
 .ambient-btn .dot{width:7px;height:7px;border-radius:50%;background:var(--brassd);flex:0 0 auto;transition:background .2s,box-shadow .2s}
 .ambient-btn.on{color:var(--brass2);border-color:var(--brass)}
 .ambient-btn.on .dot{background:var(--brass2);box-shadow:0 0 8px var(--brass2);animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 @media (prefers-reduced-motion:reduce){.ambient-btn.on .dot{animation:none}}
-@media (max-width:430px){.ambient-btn span.lbl{display:none}}
 </style>
 </head>
 <body>
